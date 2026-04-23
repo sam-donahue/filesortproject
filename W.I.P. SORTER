@@ -1,7 +1,63 @@
-## RAFE BURTON; NEED TO CHANGE SAMPLE FILE TEXTS TO '-' AND NOT '/' WHEN SEPERATING DATES
+##WAITING ON SAM TO ADD CASES
 import os
 import shutil
 from datetime import datetime, timedelta
+def mainmenu():
+    print("1- Sort Files\n2- Add File(s)")
+    while True:
+        ans1 = input("Enter a selection: ")
+        try:
+            val = int(ans1) 
+            if val in (1, 2):
+                return val
+            else:
+                print("Integer out of bounds. Please enter 1 or 2.")
+        except ValueError:
+            print("Value is not an integer. Please select a valid option.")
+
+def filesorter(file):
+    samplelist = []
+    with open('samplefiles.txt', 'r') as file:
+        for line in file:
+            line = line.strip()
+        presort = line.slplit('.')
+        samplelist[line] = {"date": presort[0], "dotw": presort[1], "name": presort[2], "title": presort[3], "size": presort[4], "dslo": presort[5]}
+        return samplelist
+
+def menu1opt1():
+    return input("What value would you like to sort by?\n\n""1 - Date\n2 - Day of the Week\n3 - Name\n""4 - Title\n5 - Size\n6 - Days Since Last Open\n")
+
+def values():
+    return input("How many search results would you like to see? ")
+
+def date(samplelist):
+
+    def alphasort(
+
+def menu1():
+    ansm1 = menu1opt1()
+    val1 = values()
+    match ansm1:
+        case 1:
+            
+        case 2:
+            
+        case 3:
+
+        case 4:
+
+        case 5:
+
+        case 6:
+
+        case _:
+            )
+#
+# Main
+#
+
+print("Welcome to the File Compiler. Please choose your desired operation.")
+valans = mainmenu()
 
 def read_filenames(file_list_path):
     with open(file_list_path, 'r') as f:
@@ -9,7 +65,7 @@ def read_filenames(file_list_path):
 
 def extract_date(filename):
     try:
-        date_part = filename.split('.')[0]   # 06-18-2023
+        date_part = filename.split('.')[0]
         return datetime.strptime(date_part, "%m-%d-%Y")
     except:
         return None
@@ -44,4 +100,4 @@ def organize_files(file_list_path, source_folder="."):
         else:
             print(f"File not found: {src}")
 
-organize_files("UNSORTED.txt")
+organize_files("Untitled5.ipynb")
